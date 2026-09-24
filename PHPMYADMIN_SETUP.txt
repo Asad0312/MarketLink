@@ -1,0 +1,63 @@
+MARKETLINK — PHPMYADMIN / XAMPP SETUP
+=====================================
+
+DATABASE FILE
+-------------
+Import this file:
+
+database/marketlink_mysql.sql
+
+The SQL file is MySQL/MariaDB compatible. Do not use a `.db` or SQLite file.
+
+STEP 1 — START XAMPP
+---------------------
+1. Open the XAMPP Control Panel.
+2. Click Start beside Apache.
+3. Click Start beside MySQL.
+
+STEP 2 — CREATE/IMPORT DATABASE
+--------------------------------
+1. Open: http://localhost/phpmyadmin
+2. Click the Import tab.
+3. Click Choose File.
+4. Select: C:\xampp\htdocs\Techwize7\database\marketlink_mysql.sql
+5. Keep Character set of the file as utf8mb4.
+6. Click Import / Go at the bottom.
+
+The SQL file automatically creates the database named:
+
+marketlink
+
+After a successful import, refresh phpMyAdmin. The left side should show the
+`marketlink` database with 20 application tables and demo data.
+
+STEP 3 — DEFAULT XAMPP DATABASE SETTINGS
+-----------------------------------------
+Host:     127.0.0.1
+Port:     3306
+Database: marketlink
+User:     root
+Password: blank
+
+These defaults are already present in:
+
+config/app.php
+
+STEP 4 — RUN THE APPLICATION
+----------------------------
+Open:
+
+http://localhost/Techwize7/
+
+STEP 5 — DEMO LOGINS
+--------------------
+All demo usernames and passwords are stored separately in:
+
+DEMO_CREDENTIALS.txt
+
+IMPORTANT
+---------
+- Use phpMyAdmin / MySQL, not DB Browser for SQLite.
+- Import the complete `marketlink_mysql.sql` file.
+- If MySQL root has a password in your XAMPP installation, update `DB_PASSWORD`
+  in `config/app.php` to the same password.
